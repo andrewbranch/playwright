@@ -48,14 +48,14 @@ export type PointerActionWaitOptions = TimeoutOptions & ForceOptions & StrictOpt
 };
 
 export type ElementScreenshotOptions = TimeoutOptions & {
-  type?: 'png' | 'jpeg',
-  quality?: number,
-  omitBackground?: boolean,
+  type?: 'png' | 'jpeg' | undefined,
+  quality?: number | undefined,
+  omitBackground?: boolean | undefined,
 };
 
 export type ScreenshotOptions = ElementScreenshotOptions & {
-  fullPage?: boolean,
-  clip?: Rect,
+  fullPage?: boolean | undefined,
+  clip?: Rect | undefined,
 };
 
 export type PageScreencastOptions = {

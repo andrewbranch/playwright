@@ -37,7 +37,7 @@ export class TimeoutSettings {
     this._defaultNavigationTimeout = timeout;
   }
 
-  navigationTimeout(options: { timeout?: number }): number {
+  navigationTimeout(options: { timeout?: number | undefined }): number {
     if (typeof options.timeout === 'number')
       return options.timeout;
     if (this._defaultNavigationTimeout !== null)
@@ -49,7 +49,7 @@ export class TimeoutSettings {
     return TIMEOUT;
   }
 
-  timeout(options: { timeout?: number }): number {
+  timeout(options: { timeout?: number | undefined }): number {
     if (typeof options.timeout === 'number')
       return options.timeout;
     if (this._defaultTimeout !== null)

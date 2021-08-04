@@ -1500,14 +1500,14 @@ export type FrameDblclickOptions = {
 export type FrameDblclickResult = void;
 export type FrameDispatchEventParams = {
   selector: string,
-  strict?: boolean,
+  strict?: boolean | undefined,
   type: string,
   eventInit: SerializedArgument,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameDispatchEventOptions = {
   strict?: boolean,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameDispatchEventResult = void;
 export type FrameEvaluateExpressionParams = {
@@ -1549,12 +1549,12 @@ export type FrameFillOptions = {
 export type FrameFillResult = void;
 export type FrameFocusParams = {
   selector: string,
-  strict?: boolean,
-  timeout?: number,
+  strict?: boolean | undefined,
+  timeout?: number | undefined,
 };
 export type FrameFocusOptions = {
   strict?: boolean,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameFocusResult = void;
 export type FrameFrameElementParams = {};
@@ -1564,13 +1564,13 @@ export type FrameFrameElementResult = {
 };
 export type FrameGetAttributeParams = {
   selector: string,
-  strict?: boolean,
+  strict?: boolean | undefined,
   name: string,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameGetAttributeOptions = {
   strict?: boolean,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameGetAttributeResult = {
   value?: string,
@@ -1609,108 +1609,108 @@ export type FrameHoverOptions = {
 export type FrameHoverResult = void;
 export type FrameInnerHTMLParams = {
   selector: string,
-  strict?: boolean,
-  timeout?: number,
+  strict?: boolean | undefined,
+  timeout?: number | undefined,
 };
 export type FrameInnerHTMLOptions = {
   strict?: boolean,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameInnerHTMLResult = {
   value: string,
 };
 export type FrameInnerTextParams = {
   selector: string,
-  strict?: boolean,
-  timeout?: number,
+  strict?: boolean | undefined,
+  timeout?: number | undefined,
 };
 export type FrameInnerTextOptions = {
   strict?: boolean,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameInnerTextResult = {
   value: string,
 };
 export type FrameInputValueParams = {
   selector: string,
-  strict?: boolean,
-  timeout?: number,
+  strict?: boolean | undefined,
+  timeout?: number | undefined,
 };
 export type FrameInputValueOptions = {
   strict?: boolean,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameInputValueResult = {
   value: string,
 };
 export type FrameIsCheckedParams = {
   selector: string,
-  strict?: boolean,
-  timeout?: number,
+  strict?: boolean | undefined,
+  timeout?: number | undefined,
 };
 export type FrameIsCheckedOptions = {
   strict?: boolean,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameIsCheckedResult = {
   value: boolean,
 };
 export type FrameIsDisabledParams = {
   selector: string,
-  strict?: boolean,
-  timeout?: number,
+  strict?: boolean | undefined,
+  timeout?: number | undefined,
 };
 export type FrameIsDisabledOptions = {
   strict?: boolean,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameIsDisabledResult = {
   value: boolean,
 };
 export type FrameIsEnabledParams = {
   selector: string,
-  strict?: boolean,
-  timeout?: number,
+  strict?: boolean | undefined,
+  timeout?: number | undefined,
 };
 export type FrameIsEnabledOptions = {
   strict?: boolean,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameIsEnabledResult = {
   value: boolean,
 };
 export type FrameIsHiddenParams = {
   selector: string,
-  strict?: boolean,
-  timeout?: number,
+  strict?: boolean | undefined,
+  timeout?: number | undefined,
 };
 export type FrameIsHiddenOptions = {
   strict?: boolean,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameIsHiddenResult = {
   value: boolean,
 };
 export type FrameIsVisibleParams = {
   selector: string,
-  strict?: boolean,
-  timeout?: number,
+  strict?: boolean | undefined,
+  timeout?: number | undefined,
 };
 export type FrameIsVisibleOptions = {
   strict?: boolean,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameIsVisibleResult = {
   value: boolean,
 };
 export type FrameIsEditableParams = {
   selector: string,
-  strict?: boolean,
-  timeout?: number,
+  strict?: boolean | undefined,
+  timeout?: number | undefined,
 };
 export type FrameIsEditableOptions = {
   strict?: boolean,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameIsEditableResult = {
   value: boolean,
@@ -1827,12 +1827,12 @@ export type FrameTapOptions = {
 export type FrameTapResult = void;
 export type FrameTextContentParams = {
   selector: string,
-  strict?: boolean,
-  timeout?: number,
+  strict?: boolean | undefined,
+  timeout?: number | undefined,
 };
 export type FrameTextContentOptions = {
   strict?: boolean,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type FrameTextContentResult = {
   value?: string,
@@ -2938,8 +2938,8 @@ export type AndroidDeviceWebViewRemovedEvent = {
 };
 export type AndroidDeviceWaitParams = {
   selector: AndroidSelector,
-  state?: 'gone',
-  timeout?: number,
+  state?: 'gone' | undefined,
+  timeout?: number | undefined,
 };
 export type AndroidDeviceWaitOptions = {
   state?: 'gone',
@@ -2949,7 +2949,7 @@ export type AndroidDeviceWaitResult = void;
 export type AndroidDeviceFillParams = {
   selector: AndroidSelector,
   text: string,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type AndroidDeviceFillOptions = {
   timeout?: number,
@@ -2957,8 +2957,8 @@ export type AndroidDeviceFillOptions = {
 export type AndroidDeviceFillResult = void;
 export type AndroidDeviceTapParams = {
   selector: AndroidSelector,
-  duration?: number,
-  timeout?: number,
+  duration?: number | undefined,
+  timeout?: number | undefined,
 };
 export type AndroidDeviceTapOptions = {
   duration?: number,
@@ -2968,8 +2968,8 @@ export type AndroidDeviceTapResult = void;
 export type AndroidDeviceDragParams = {
   selector: AndroidSelector,
   dest: Point,
-  speed?: number,
-  timeout?: number,
+  speed?: number | undefined,
+  timeout?: number | undefined,
 };
 export type AndroidDeviceDragOptions = {
   speed?: number,
@@ -2979,8 +2979,8 @@ export type AndroidDeviceDragResult = void;
 export type AndroidDeviceFlingParams = {
   selector: AndroidSelector,
   direction: 'up' | 'down' | 'left' | 'right',
-  speed?: number,
-  timeout?: number,
+  speed?: number | undefined,
+  timeout?: number | undefined,
 };
 export type AndroidDeviceFlingOptions = {
   speed?: number,
@@ -2989,7 +2989,7 @@ export type AndroidDeviceFlingOptions = {
 export type AndroidDeviceFlingResult = void;
 export type AndroidDeviceLongTapParams = {
   selector: AndroidSelector,
-  timeout?: number,
+  timeout?: number | undefined,
 };
 export type AndroidDeviceLongTapOptions = {
   timeout?: number,
@@ -2998,8 +2998,8 @@ export type AndroidDeviceLongTapResult = void;
 export type AndroidDevicePinchCloseParams = {
   selector: AndroidSelector,
   percent: number,
-  speed?: number,
-  timeout?: number,
+  speed?: number | undefined,
+  timeout?: number | undefined,
 };
 export type AndroidDevicePinchCloseOptions = {
   speed?: number,
@@ -3009,8 +3009,8 @@ export type AndroidDevicePinchCloseResult = void;
 export type AndroidDevicePinchOpenParams = {
   selector: AndroidSelector,
   percent: number,
-  speed?: number,
-  timeout?: number,
+  speed?: number | undefined,
+  timeout?: number | undefined,
 };
 export type AndroidDevicePinchOpenOptions = {
   speed?: number,
@@ -3021,8 +3021,8 @@ export type AndroidDeviceScrollParams = {
   selector: AndroidSelector,
   direction: 'up' | 'down' | 'left' | 'right',
   percent: number,
-  speed?: number,
-  timeout?: number,
+  speed?: number | undefined,
+  timeout?: number | undefined,
 };
 export type AndroidDeviceScrollOptions = {
   speed?: number,
@@ -3033,8 +3033,8 @@ export type AndroidDeviceSwipeParams = {
   selector: AndroidSelector,
   direction: 'up' | 'down' | 'left' | 'right',
   percent: number,
-  speed?: number,
-  timeout?: number,
+  speed?: number | undefined,
+  timeout?: number | undefined,
 };
 export type AndroidDeviceSwipeOptions = {
   speed?: number,
