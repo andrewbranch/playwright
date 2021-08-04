@@ -100,7 +100,7 @@ export class Keyboard {
     }
   }
 
-  async press(key: string, options: { delay?: number } = {}) {
+  async press(key: string, options: { delay?: number | undefined } = {}) {
     function split(keyString: string) {
       const keys = [];
       let building = '';

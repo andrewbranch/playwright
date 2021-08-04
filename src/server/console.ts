@@ -20,7 +20,7 @@ import { ConsoleMessageLocation } from './types';
 
 export class ConsoleMessage extends SdkObject {
   private _type: string;
-  private _text?: string;
+  private _text?: string | undefined;
   private _args: js.JSHandle[];
   private _location: ConsoleMessageLocation;
 

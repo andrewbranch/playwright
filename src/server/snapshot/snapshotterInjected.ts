@@ -17,7 +17,7 @@
 import { NodeSnapshot } from './snapshotTypes';
 
 export type SnapshotData = {
-  doctype?: string,
+  doctype?: string | undefined,
   html: NodeSnapshot,
   resourceOverrides: {
     url: string,
@@ -48,7 +48,7 @@ export function frameSnapshotStreamer(snapshotStreamer: string) {
   type CachedData = {
     cached?: any[], // Cached values to determine whether the snapshot will be the same.
     ref?: [number, number], // Previous snapshotNumber and nodeIndex.
-    attributesCached?: boolean, // Whether node attributes have not changed.
+    attributesCached?: boolean | undefined, // Whether node attributes have not changed.
     cssText?: string, // Text for stylesheets.
     cssRef?: number, // Previous snapshotNumber for overridden stylesheets.
   };

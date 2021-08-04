@@ -27,7 +27,7 @@ type FixtureRegistration = {
   auto: boolean;
   deps: string[];
   id: string;
-  super?: FixtureRegistration;
+  super?: FixtureRegistration | undefined;
 };
 
 class Fixture {

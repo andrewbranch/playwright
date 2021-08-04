@@ -318,7 +318,7 @@ export async function convertInputFiles(files: string | FilePayload | string[] |
   return filePayloads;
 }
 
-export function determineScreenshotType(options: { path?: string, type?: 'png' | 'jpeg' }): 'png' | 'jpeg' | undefined {
+export function determineScreenshotType(options: { path?: string | undefined, type?: 'png' | 'jpeg' | undefined }): 'png' | 'jpeg' | undefined {
   if (options.path) {
     const mimeType = mime.getType(options.path);
     if (mimeType === 'image/png')

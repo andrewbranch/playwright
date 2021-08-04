@@ -56,7 +56,7 @@ export type FrameSnapshot = {
   frameUrl: string,
   timestamp: number,
   collectionTime: number,
-  doctype?: string,
+  doctype?: string | undefined,
   html: NodeSnapshot,
   resourceOverrides: ResourceOverride[],
   viewport: { width: number, height: number },

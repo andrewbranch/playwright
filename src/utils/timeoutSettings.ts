@@ -59,7 +59,7 @@ export class TimeoutSettings {
     return TIMEOUT;
   }
 
-  static timeout(options: { timeout?: number }): number {
+  static timeout(options: { timeout?: number | undefined }): number {
     if (typeof options.timeout === 'number')
       return options.timeout;
     return TIMEOUT;

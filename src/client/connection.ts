@@ -54,7 +54,7 @@ export class Connection extends EventEmitter {
   private _callbacks = new Map<number, { resolve: (a: any) => void, reject: (a: Error) => void, metadata: channels.Metadata }>();
   private _rootObject: ChannelOwner;
   private _disconnectedErrorMessage: string | undefined;
-  private _onClose?: () => void;
+  private _onClose?: (() => void) | undefined;
 
   constructor(onClose?: () => void) {
     super();

@@ -26,7 +26,7 @@ export type EventData = {
 
 export type UIState = {
   mode: Mode;
-  actionPoint?: Point;
+  actionPoint?: Point | undefined;
   actionSelector?: string;
 };
 
@@ -37,9 +37,9 @@ export type CallLog = {
   title: string;
   messages: string[];
   status: CallLogStatus;
-  error?: SerializedError;
+  error?: SerializedError | undefined;
   reveal?: boolean;
-  duration?: number;
+  duration?: number | undefined;
   params: {
     url?: string,
     selector?: string,
@@ -56,5 +56,5 @@ export type Source = {
   text: string;
   language: string;
   highlight: SourceHighlight[];
-  revealLine?: number;
+  revealLine?: number | undefined;
 };

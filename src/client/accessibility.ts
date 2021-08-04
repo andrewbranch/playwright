@@ -20,10 +20,10 @@ import { ElementHandle } from './elementHandle';
 import * as api from '../../types/types';
 
 type SerializedAXNode = Omit<channels.AXNode, 'valueString' | 'valueNumber' | 'children' | 'checked' | 'pressed'> & {
-  value?: string|number,
-  checked?: boolean | 'mixed',
-  pressed?: boolean | 'mixed',
-  children?: SerializedAXNode[]
+  value?: string | number | undefined,
+  checked?: boolean | 'mixed' | undefined,
+  pressed?: boolean | 'mixed' | undefined,
+  children?: SerializedAXNode[] | undefined
 };
 
 function axNodeFromProtocol(axNode: channels.AXNode): SerializedAXNode {

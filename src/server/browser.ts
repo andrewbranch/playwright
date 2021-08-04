@@ -26,7 +26,7 @@ import { Artifact } from './artifact';
 import { Selectors } from './selectors';
 
 export interface BrowserProcess {
-  onclose?: ((exitCode: number | null, signal: string | null) => void);
+  onclose?: ((exitCode: number | null, signal: string | null) => void) | undefined;
   process?: ChildProcess;
   kill(): Promise<void>;
   close(): Promise<void>;
@@ -35,25 +35,25 @@ export interface BrowserProcess {
 export type PlaywrightOptions = {
   rootSdkObject: SdkObject,
   selectors: Selectors,
-  loopbackProxyOverride?: () => string,
+  loopbackProxyOverride?: (() => string) | undefined,
 };
 
 export type BrowserOptions = PlaywrightOptions & {
   name: string,
   isChromium: boolean,
-  channel?: string,
+  channel?: string | undefined,
   artifactsDir: string;
   downloadsPath: string,
   tracesDir: string,
   headful?: boolean,
-  persistent?: types.BrowserContextOptions,  // Undefined means no persistent context.
+  persistent?: types.BrowserContextOptions | undefined,  // Undefined means no persistent context.
   browserProcess: BrowserProcess,
-  customExecutablePath?: string;
-  proxy?: ProxySettings,
+  customExecutablePath?: string | undefined;
+  proxy?: ProxySettings | undefined,
   protocolLogger: types.ProtocolLogger,
   browserLogsCollector: RecentLogsCollector,
-  slowMo?: number;
-  wsEndpoint?: string;  // Only there when connected over web socket.
+  slowMo?: number | undefined;
+  wsEndpoint?: string | undefined;  // Only there when connected over web socket.
 };
 
 export abstract class Browser extends SdkObject {

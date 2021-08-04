@@ -83,7 +83,7 @@ export class Request extends SdkObject {
   private _response: Response | null = null;
   private _redirectedFrom: Request | null;
   private _redirectedTo: Request | null = null;
-  readonly _documentId?: string;
+  readonly _documentId?: string | undefined;
   readonly _isFavicon: boolean;
   _failureText: string | null = null;
   private _url: string;

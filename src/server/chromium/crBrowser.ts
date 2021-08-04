@@ -37,7 +37,7 @@ export class CRBrowser extends Browser {
   _crPages = new Map<string, CRPage>();
   _backgroundPages = new Map<string, CRPage>();
   _serviceWorkers = new Map<string, CRServiceWorker>();
-  _devtools?: CRDevTools;
+  _devtools?: CRDevTools | undefined;
   _isMac = false;
   private _version = '';
 
@@ -228,7 +228,7 @@ export class CRBrowser extends Browser {
     return await this._connection.createBrowserSession();
   }
 
-  async startTracing(page?: Page, options: { path?: string; screenshots?: boolean; categories?: string[]; } = {}) {
+  async startTracing(page?: Page, options: { path?: string | undefined; screenshots?: boolean | undefined; categories?: string[] | undefined; } = {}) {
     assert(!this._tracingRecording, 'Cannot start recording trace while already recording trace.');
     this._tracingClient = page ? (page._delegate as CRPage)._mainFrameSession._client : this._session;
 

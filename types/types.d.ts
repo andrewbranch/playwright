@@ -12416,17 +12416,17 @@ export interface BrowserContextOptions {
      * will be scaled down if necessary to fit the specified size.
      */
     size?: {
-      /**
-       * Video frame width.
-       */
-      width: number;
+        /**
+         * Video frame width.
+         */
+        width: number;
 
-      /**
-       * Video frame height.
-       */
-      height: number;
+        /**
+         * Video frame height.
+         */
+        height: number;
     };
-  };
+} | undefined;
 
   /**
    * Emulates `'prefers-reduced-motion'` media feature, supported values are `'reduce'`, `'no-preference'`. See

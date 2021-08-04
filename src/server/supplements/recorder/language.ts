@@ -23,8 +23,8 @@ export type LanguageGeneratorOptions = {
   generateHeaders: boolean;
   launchOptions: LaunchOptions;
   contextOptions: BrowserContextOptions;
-  deviceName?: string;
-  saveStorage?: string;
+  deviceName?: string | undefined;
+  saveStorage?: string | undefined;
 };
 
 export interface LanguageGenerator {

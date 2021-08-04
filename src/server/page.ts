@@ -361,7 +361,7 @@ export class Page extends SdkObject {
     }), this._timeoutSettings.navigationTimeout(options));
   }
 
-  async emulateMedia(options: { media?: types.MediaType | null, colorScheme?: types.ColorScheme | null, reducedMotion?: types.ReducedMotion | null }) {
+  async emulateMedia(options: { media?: types.MediaType | null | undefined, colorScheme?: types.ColorScheme | null | undefined, reducedMotion?: types.ReducedMotion | null | undefined }) {
     if (options.media !== undefined)
       this._state.mediaType = options.media;
     if (options.colorScheme !== undefined)

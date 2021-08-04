@@ -19,14 +19,14 @@ import { Size, Point, Rect, TimeoutOptions } from '../common/types';
 export { Size, Point, Rect, Quad, URLMatch, TimeoutOptions } from '../common/types';
 
 export type StrictOptions = {
-  strict?: boolean,
+  strict?: boolean | undefined,
 };
 
 export type QueryOnSelectorOptions = StrictOptions & TimeoutOptions;
 
 export type WaitForElementOptions = TimeoutOptions & StrictOptions & { state?: 'attached' | 'detached' | 'visible' | 'hidden' };
 
-export type WaitForFunctionOptions = TimeoutOptions & { pollingInterval?: number };
+export type WaitForFunctionOptions = TimeoutOptions & { pollingInterval?: number | undefined };
 
 export type LifecycleEvent = 'load' | 'domcontentloaded' | 'networkidle';
 export const kLifecycleEvents: Set<LifecycleEvent> = new Set(['load', 'domcontentloaded', 'networkidle']);
@@ -36,15 +36,15 @@ export type NavigateOptions = TimeoutOptions & {
 };
 
 export type NavigatingActionWaitOptions = TimeoutOptions & StrictOptions & {
-  noWaitAfter?: boolean,
+  noWaitAfter?: boolean | undefined,
 };
 
 export type ForceOptions = {
-  force?: boolean,
+  force?: boolean | undefined,
 };
 
 export type PointerActionWaitOptions = TimeoutOptions & ForceOptions & StrictOptions & {
-  trial?: boolean;
+  trial?: boolean | undefined;
 };
 
 export type ElementScreenshotOptions = TimeoutOptions & {
@@ -168,7 +168,7 @@ export type MouseButton = 'left' | 'right' | 'middle';
 
 export type PointerActionOptions = {
   modifiers?: KeyboardModifier[];
-  position?: Point;
+  position?: Point | undefined;
 };
 
 export type DragActionOptions = {
@@ -204,11 +204,11 @@ export type NormalizedFulfillResponse = {
 };
 
 export type NormalizedContinueOverrides = {
-  url?: string,
-  method?: string,
-  headers?: HeadersArray,
-  postData?: Buffer,
-  interceptResponse?: boolean,
+  url?: string | undefined,
+  method?: string | undefined,
+  headers?: HeadersArray | undefined,
+  postData?: Buffer | undefined,
+  interceptResponse?: boolean | undefined,
 };
 
 export type NormalizedResponseContinueOverrides = {
@@ -246,63 +246,63 @@ export type EmulatedSize = { viewport: Size, screen: Size };
 
 export type BrowserContextOptions = {
   sdkLanguage: string,
-  viewport?: Size,
-  screen?: Size,
-  noDefaultViewport?: boolean,
-  ignoreHTTPSErrors?: boolean,
-  javaScriptEnabled?: boolean,
-  bypassCSP?: boolean,
-  userAgent?: string,
-  locale?: string,
-  timezoneId?: string,
-  geolocation?: Geolocation,
-  permissions?: string[],
-  extraHTTPHeaders?: HeadersArray,
-  offline?: boolean,
-  httpCredentials?: Credentials,
-  deviceScaleFactor?: number,
-  isMobile?: boolean,
-  hasTouch?: boolean,
-  colorScheme?: ColorScheme,
-  reducedMotion?: ReducedMotion,
-  acceptDownloads?: boolean,
+  viewport?: Size | undefined,
+  screen?: Size | undefined,
+  noDefaultViewport?: boolean | undefined,
+  ignoreHTTPSErrors?: boolean | undefined,
+  javaScriptEnabled?: boolean | undefined,
+  bypassCSP?: boolean | undefined,
+  userAgent?: string | undefined,
+  locale?: string | undefined,
+  timezoneId?: string | undefined,
+  geolocation?: Geolocation | undefined,
+  permissions?: string[] | undefined,
+  extraHTTPHeaders?: HeadersArray | undefined,
+  offline?: boolean | undefined,
+  httpCredentials?: Credentials | undefined,
+  deviceScaleFactor?: number | undefined,
+  isMobile?: boolean | undefined,
+  hasTouch?: boolean | undefined,
+  colorScheme?: ColorScheme | undefined,
+  reducedMotion?: ReducedMotion | undefined,
+  acceptDownloads?: boolean | undefined,
   recordVideo?: {
-    dir: string,
-    size?: Size,
-  },
+      dir: string;
+      size?: Size;
+  } | undefined,
   recordHar?: {
-    omitContent?: boolean,
-    path: string
-  },
-  proxy?: ProxySettings,
-  baseURL?: string,
-  _debugName?: string,
+      omitContent?: boolean;
+      path: string;
+  } | undefined,
+  proxy?: ProxySettings | undefined,
+  baseURL?: string | undefined,
+  _debugName?: string | undefined,
 };
 
 export type EnvArray = { name: string, value: string }[];
 
 type LaunchOptionsBase = {
-  channel?: string,
-  executablePath?: string,
-  args?: string[],
-  ignoreDefaultArgs?: string[],
-  ignoreAllDefaultArgs?: boolean,
-  handleSIGINT?: boolean,
-  handleSIGTERM?: boolean,
-  handleSIGHUP?: boolean,
-  timeout?: number,
-  env?: EnvArray,
-  headless?: boolean,
-  devtools?: boolean,
-  proxy?: ProxySettings,
-  downloadsPath?: string,
-  chromiumSandbox?: boolean,
-  slowMo?: number,
+  channel?: string | undefined,
+  executablePath?: string | undefined,
+  args?: string[] | undefined,
+  ignoreDefaultArgs?: string[] | undefined,
+  ignoreAllDefaultArgs?: boolean | undefined,
+  handleSIGINT?: boolean | undefined,
+  handleSIGTERM?: boolean | undefined,
+  handleSIGHUP?: boolean | undefined,
+  timeout?: number | undefined,
+  env?: EnvArray | undefined,
+  headless?: boolean | undefined,
+  devtools?: boolean | undefined,
+  proxy?: ProxySettings | undefined,
+  downloadsPath?: string | undefined,
+  chromiumSandbox?: boolean | undefined,
+  slowMo?: number | undefined,
   useWebSocket?: boolean,
-  tracesDir?: string,
+  tracesDir?: string | undefined,
 };
 export type LaunchOptions = LaunchOptionsBase & {
-  firefoxUserPrefs?: { [key: string]: string | number | boolean },
+  firefoxUserPrefs?: { [key: string]: string | number | boolean; } | undefined,
 };
 export type LaunchPersistentOptions = LaunchOptionsBase & BrowserContextOptions;
 
@@ -311,7 +311,7 @@ export type ProtocolLogger = (direction: 'send' | 'receive', message: object) =>
 export type SerializedAXNode = {
   role: string,
   name: string,
-  valueString?: string,
+  valueString?: string | undefined,
   valueNumber?: number,
   description?: string,
 

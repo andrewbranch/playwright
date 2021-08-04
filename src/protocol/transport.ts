@@ -36,8 +36,8 @@ export class Transport {
   private _closed = false;
   private _bytesLeft = 0;
 
-  onmessage?: (message: string) => void;
-  onclose?: () => void;
+  onmessage?: ((message: string) => void) | undefined;
+  onclose?: (() => void) | undefined;
 
   private _endian: 'be' | 'le';
   private _closeableStream: ClosableStream | undefined;

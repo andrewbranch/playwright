@@ -25,8 +25,8 @@ export class PipeTransport implements ConnectionTransport {
   private _waitForNextTask = makeWaitForNextTask();
   private _closed = false;
 
-  onmessage?: (message: ProtocolResponse) => void;
-  onclose?: () => void;
+  onmessage?: ((message: ProtocolResponse) => void) | undefined;
+  onclose?: (() => void) | undefined;
 
   constructor(pipeWrite: NodeJS.WritableStream, pipeRead: NodeJS.ReadableStream) {
     this._pipeWrite = pipeWrite;

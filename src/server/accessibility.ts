@@ -33,8 +33,8 @@ export class Accessibility {
   }
 
   async snapshot(options: {
-      interestingOnly?: boolean;
-      root?: dom.ElementHandle;
+      interestingOnly?: boolean | undefined;
+      root?: dom.ElementHandle | undefined;
     } = {}): Promise<types.SerializedAXNode | null> {
     const {
       interestingOnly = true,

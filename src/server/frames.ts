@@ -60,7 +60,7 @@ export type NavigationEvent = {
   name: string,
   // Information about the new document for cross-document navigations.
   // Undefined for same-document navigations.
-  newDocument?: DocumentInfo,
+  newDocument?: DocumentInfo | undefined,
   // Error for cross-document navigations if any. When error is present,
   // the navigation did not commit.
   error?: Error,

@@ -66,7 +66,7 @@ export type Request = {
   cookies: Cookie[];
   headers: Header[];
   queryString: QueryParameter[];
-  postData?: PostData;
+  postData?: PostData | undefined;
   headersSize: number;
   bodySize: number;
 };

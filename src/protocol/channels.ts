@@ -221,29 +221,29 @@ export interface BrowserTypeChannel extends Channel {
   connectOverCDP(params: BrowserTypeConnectOverCDPParams, metadata?: Metadata): Promise<BrowserTypeConnectOverCDPResult>;
 }
 export type BrowserTypeLaunchParams = {
-  channel?: string,
-  executablePath?: string,
-  args?: string[],
+  channel?: string | undefined,
+  executablePath?: string | undefined,
+  args?: string[] | undefined,
   ignoreAllDefaultArgs?: boolean,
-  ignoreDefaultArgs?: string[],
-  handleSIGINT?: boolean,
-  handleSIGTERM?: boolean,
-  handleSIGHUP?: boolean,
-  timeout?: number,
-  env?: NameValue[],
-  headless?: boolean,
-  devtools?: boolean,
+  ignoreDefaultArgs?: string[] | undefined,
+  handleSIGINT?: boolean | undefined,
+  handleSIGTERM?: boolean | undefined,
+  handleSIGHUP?: boolean | undefined,
+  timeout?: number | undefined,
+  env?: NameValue[] | undefined,
+  headless?: boolean | undefined,
+  devtools?: boolean | undefined,
   proxy?: {
-    server: string,
-    bypass?: string,
-    username?: string,
-    password?: string,
-  },
-  downloadsPath?: string,
-  tracesDir?: string,
-  chromiumSandbox?: boolean,
+      server: string;
+      bypass?: string;
+      username?: string;
+      password?: string;
+  } | undefined,
+  downloadsPath?: string | undefined,
+  tracesDir?: string | undefined,
+  chromiumSandbox?: boolean | undefined,
   firefoxUserPrefs?: any,
-  slowMo?: number,
+  slowMo?: number | undefined,
 };
 export type BrowserTypeLaunchOptions = {
   channel?: string,
@@ -274,74 +274,74 @@ export type BrowserTypeLaunchResult = {
   browser: BrowserChannel,
 };
 export type BrowserTypeLaunchPersistentContextParams = {
-  channel?: string,
+  channel?: string | undefined,
   executablePath?: string,
   args?: string[],
   ignoreAllDefaultArgs?: boolean,
-  ignoreDefaultArgs?: string[],
+  ignoreDefaultArgs?: string[] | undefined,
   handleSIGINT?: boolean,
   handleSIGTERM?: boolean,
   handleSIGHUP?: boolean,
   timeout?: number,
-  env?: NameValue[],
+  env?: NameValue[] | undefined,
   headless?: boolean,
   devtools?: boolean,
   proxy?: {
-    server: string,
-    bypass?: string,
-    username?: string,
-    password?: string,
-  },
+      server: string;
+      bypass?: string;
+      username?: string;
+      password?: string;
+  } | undefined,
   downloadsPath?: string,
   tracesDir?: string,
   chromiumSandbox?: boolean,
   sdkLanguage: string,
-  noDefaultViewport?: boolean,
+  noDefaultViewport?: boolean | undefined,
   viewport?: {
-    width: number,
-    height: number,
-  },
+      width: number;
+      height: number;
+  } | undefined,
   screen?: {
-    width: number,
-    height: number,
-  },
-  ignoreHTTPSErrors?: boolean,
-  javaScriptEnabled?: boolean,
-  bypassCSP?: boolean,
-  userAgent?: string,
-  locale?: string,
-  timezoneId?: string,
+      width: number;
+      height: number;
+  } | undefined,
+  ignoreHTTPSErrors?: boolean | undefined,
+  javaScriptEnabled?: boolean | undefined,
+  bypassCSP?: boolean | undefined,
+  userAgent?: string | undefined,
+  locale?: string | undefined,
+  timezoneId?: string | undefined,
   geolocation?: {
-    longitude: number,
-    latitude: number,
-    accuracy?: number,
-  },
-  permissions?: string[],
-  extraHTTPHeaders?: NameValue[],
-  offline?: boolean,
+      longitude: number;
+      latitude: number;
+      accuracy?: number;
+  } | undefined,
+  permissions?: string[] | undefined,
+  extraHTTPHeaders?: NameValue[] | undefined,
+  offline?: boolean | undefined,
   httpCredentials?: {
-    username: string,
-    password: string,
-  },
-  deviceScaleFactor?: number,
-  isMobile?: boolean,
-  hasTouch?: boolean,
-  colorScheme?: 'dark' | 'light' | 'no-preference',
-  reducedMotion?: 'reduce' | 'no-preference',
-  acceptDownloads?: boolean,
-  baseURL?: string,
-  _debugName?: string,
+      username: string;
+      password: string;
+  } | undefined,
+  deviceScaleFactor?: number | undefined,
+  isMobile?: boolean | undefined,
+  hasTouch?: boolean | undefined,
+  colorScheme?: 'dark' | 'light' | 'no-preference' | undefined,
+  reducedMotion?: 'reduce' | 'no-preference' | undefined,
+  acceptDownloads?: boolean | undefined,
+  baseURL?: string | undefined,
+  _debugName?: string | undefined,
   recordVideo?: {
-    dir: string,
-    size?: {
-      width: number,
-      height: number,
-    },
-  },
+      dir: string;
+      size?: {
+          width: number;
+          height: number;
+      };
+  } | undefined,
   recordHar?: {
-    omitContent?: boolean,
-    path: string,
-  },
+      omitContent?: boolean;
+      path: string;
+  } | undefined,
   userDataDir: string,
   slowMo?: number,
 };
@@ -421,9 +421,9 @@ export type BrowserTypeLaunchPersistentContextResult = {
 export type BrowserTypeConnectOverCDPParams = {
   sdkLanguage: string,
   endpointURL: string,
-  headers?: NameValue[],
-  slowMo?: number,
-  timeout?: number,
+  headers?: NameValue[] | undefined,
+  slowMo?: number | undefined,
+  timeout?: number | undefined,
 };
 export type BrowserTypeConnectOverCDPOptions = {
   headers?: NameValue[],
@@ -460,56 +460,56 @@ export type BrowserNewContextParams = {
   sdkLanguage: string,
   noDefaultViewport?: boolean,
   viewport?: {
-    width: number,
-    height: number,
-  },
+      width: number;
+      height: number;
+  } | undefined,
   screen?: {
-    width: number,
-    height: number,
-  },
-  ignoreHTTPSErrors?: boolean,
-  javaScriptEnabled?: boolean,
-  bypassCSP?: boolean,
-  userAgent?: string,
-  locale?: string,
-  timezoneId?: string,
+      width: number;
+      height: number;
+  } | undefined,
+  ignoreHTTPSErrors?: boolean | undefined,
+  javaScriptEnabled?: boolean | undefined,
+  bypassCSP?: boolean | undefined,
+  userAgent?: string | undefined,
+  locale?: string | undefined,
+  timezoneId?: string | undefined,
   geolocation?: {
-    longitude: number,
-    latitude: number,
-    accuracy?: number,
-  },
-  permissions?: string[],
-  extraHTTPHeaders?: NameValue[],
-  offline?: boolean,
+      longitude: number;
+      latitude: number;
+      accuracy?: number;
+  } | undefined,
+  permissions?: string[] | undefined,
+  extraHTTPHeaders?: NameValue[] | undefined,
+  offline?: boolean | undefined,
   httpCredentials?: {
-    username: string,
-    password: string,
-  },
-  deviceScaleFactor?: number,
-  isMobile?: boolean,
-  hasTouch?: boolean,
-  colorScheme?: 'dark' | 'light' | 'no-preference',
-  reducedMotion?: 'reduce' | 'no-preference',
-  acceptDownloads?: boolean,
-  baseURL?: string,
-  _debugName?: string,
+      username: string;
+      password: string;
+  } | undefined,
+  deviceScaleFactor?: number | undefined,
+  isMobile?: boolean | undefined,
+  hasTouch?: boolean | undefined,
+  colorScheme?: 'dark' | 'light' | 'no-preference' | undefined,
+  reducedMotion?: 'reduce' | 'no-preference' | undefined,
+  acceptDownloads?: boolean | undefined,
+  baseURL?: string | undefined,
+  _debugName?: string | undefined,
   recordVideo?: {
-    dir: string,
-    size?: {
-      width: number,
-      height: number,
-    },
-  },
+      dir: string;
+      size?: {
+          width: number;
+          height: number;
+      };
+  } | undefined,
   recordHar?: {
-    omitContent?: boolean,
-    path: string,
-  },
+      omitContent?: boolean;
+      path: string;
+  } | undefined,
   proxy?: {
-    server: string,
-    bypass?: string,
-    username?: string,
-    password?: string,
-  },
+      server: string;
+      bypass?: string;
+      username?: string;
+      password?: string;
+  } | undefined,
   storageState?: {
     cookies?: SetNetworkCookie[],
     origins?: OriginStorage[],
@@ -582,10 +582,10 @@ export type BrowserNewBrowserCDPSessionResult = {
   session: CDPSessionChannel,
 };
 export type BrowserStartTracingParams = {
-  page?: PageChannel,
-  path?: string,
-  screenshots?: boolean,
-  categories?: string[],
+  page?: PageChannel | undefined,
+  path?: string | undefined,
+  screenshots?: boolean | undefined,
+  categories?: string[] | undefined,
 };
 export type BrowserStartTracingOptions = {
   page?: PageChannel,
@@ -611,7 +611,7 @@ export type EventTargetWaitForEventInfoParams = {
     phase: 'before' | 'after' | 'log',
     event?: string,
     message?: string,
-    error?: string,
+    error?: string | undefined,
   },
 };
 export type EventTargetWaitForEventInfoOptions = {
@@ -732,7 +732,7 @@ export type BrowserContextCookiesResult = {
 };
 export type BrowserContextExposeBindingParams = {
   name: string,
-  needsHandle?: boolean,
+  needsHandle?: boolean | undefined,
 };
 export type BrowserContextExposeBindingOptions = {
   needsHandle?: boolean,
@@ -774,10 +774,10 @@ export type BrowserContextSetExtraHTTPHeadersOptions = {
 export type BrowserContextSetExtraHTTPHeadersResult = void;
 export type BrowserContextSetGeolocationParams = {
   geolocation?: {
-    longitude: number,
-    latitude: number,
-    accuracy?: number,
-  },
+        longitude: number;
+        latitude: number;
+        accuracy?: number;
+    } | undefined,
 };
 export type BrowserContextSetGeolocationOptions = {
   geolocation?: {
@@ -789,9 +789,9 @@ export type BrowserContextSetGeolocationOptions = {
 export type BrowserContextSetGeolocationResult = void;
 export type BrowserContextSetHTTPCredentialsParams = {
   httpCredentials?: {
-    username: string,
-    password: string,
-  },
+        username: string;
+        password: string;
+    } | undefined,
 };
 export type BrowserContextSetHTTPCredentialsOptions = {
   httpCredentials?: {
@@ -825,13 +825,13 @@ export type BrowserContextPauseOptions = {};
 export type BrowserContextPauseResult = void;
 export type BrowserContextRecorderSupplementEnableParams = {
   language?: string,
-  startRecording?: boolean,
+  startRecording?: boolean | undefined,
   pauseOnNextStatement?: boolean,
   launchOptions?: any,
   contextOptions?: any,
-  device?: string,
-  saveStorage?: string,
-  outputFile?: string,
+  device?: string | undefined,
+  saveStorage?: string | undefined,
+  outputFile?: string | undefined,
 };
 export type BrowserContextRecorderSupplementEnableOptions = {
   language?: string,
@@ -1012,9 +1012,9 @@ export type PageCloseOptions = {
 };
 export type PageCloseResult = void;
 export type PageEmulateMediaParams = {
-  media?: 'screen' | 'print' | 'null',
-  colorScheme?: 'dark' | 'light' | 'no-preference' | 'null',
-  reducedMotion?: 'reduce' | 'no-preference' | 'null',
+  media?: 'screen' | 'print' | 'null' | undefined,
+  colorScheme?: 'dark' | 'light' | 'no-preference' | 'null' | undefined,
+  reducedMotion?: 'reduce' | 'no-preference' | 'null' | undefined,
 };
 export type PageEmulateMediaOptions = {
   media?: 'screen' | 'print' | 'null',
@@ -1024,7 +1024,7 @@ export type PageEmulateMediaOptions = {
 export type PageEmulateMediaResult = void;
 export type PageExposeBindingParams = {
   name: string,
-  needsHandle?: boolean,
+  needsHandle?: boolean | undefined,
 };
 export type PageExposeBindingOptions = {
   needsHandle?: boolean,
@@ -1064,16 +1064,16 @@ export type PageReloadResult = {
   response?: ResponseChannel,
 };
 export type PageScreenshotParams = {
-  timeout?: number,
-  type?: 'png' | 'jpeg',
-  quality?: number,
-  omitBackground?: boolean,
-  fullPage?: boolean,
-  clip?: Rect,
+  timeout?: number | undefined,
+  type?: 'png' | 'jpeg' | undefined,
+  quality?: number | undefined,
+  omitBackground?: boolean | undefined,
+  fullPage?: boolean | undefined,
+  clip?: Rect | undefined,
 };
 export type PageScreenshotOptions = {
   timeout?: number,
-  type?: 'png' | 'jpeg',
+  type?: 'png' | 'jpeg' | undefined,
   quality?: number,
   omitBackground?: boolean,
   fullPage?: boolean,
@@ -1192,8 +1192,8 @@ export type PageTouchscreenTapOptions = {
 };
 export type PageTouchscreenTapResult = void;
 export type PageAccessibilitySnapshotParams = {
-  interestingOnly?: boolean,
-  root?: ElementHandleChannel,
+  interestingOnly?: boolean | undefined,
+  root?: ElementHandleChannel | undefined,
 };
 export type PageAccessibilitySnapshotOptions = {
   interestingOnly?: boolean,
@@ -1879,8 +1879,8 @@ export type FrameWaitForFunctionParams = {
   expression: string,
   isFunction?: boolean,
   arg: SerializedArgument,
-  timeout?: number,
-  pollingInterval?: number,
+  timeout?: number | undefined,
+  pollingInterval?: number | undefined,
 };
 export type FrameWaitForFunctionOptions = {
   isFunction?: boolean,
@@ -2266,14 +2266,14 @@ export type ElementHandleQuerySelectorAllResult = {
   elements: ElementHandleChannel[],
 };
 export type ElementHandleScreenshotParams = {
-  timeout?: number,
-  type?: 'png' | 'jpeg',
-  quality?: number,
-  omitBackground?: boolean,
+  timeout?: number | undefined,
+  type?: 'png' | 'jpeg' | undefined,
+  quality?: number | undefined,
+  omitBackground?: boolean | undefined,
 };
 export type ElementHandleScreenshotOptions = {
   timeout?: number,
-  type?: 'png' | 'jpeg',
+  type?: 'png' | 'jpeg' | undefined,
   quality?: number,
   omitBackground?: boolean,
 };
@@ -2441,17 +2441,17 @@ export interface RouteChannel extends Channel {
   responseBody(params?: RouteResponseBodyParams, metadata?: Metadata): Promise<RouteResponseBodyResult>;
 }
 export type RouteAbortParams = {
-  errorCode?: string,
+  errorCode?: string | undefined,
 };
 export type RouteAbortOptions = {
   errorCode?: string,
 };
 export type RouteAbortResult = void;
 export type RouteContinueParams = {
-  url?: string,
-  method?: string,
-  headers?: NameValue[],
-  postData?: Binary,
+  url?: string | undefined,
+  method?: string | undefined,
+  headers?: NameValue[] | undefined,
+  postData?: Binary | undefined,
   interceptResponse?: boolean,
 };
 export type RouteContinueOptions = {
@@ -2626,7 +2626,7 @@ export interface DialogChannel extends Channel {
   dismiss(params?: DialogDismissParams, metadata?: Metadata): Promise<DialogDismissResult>;
 }
 export type DialogAcceptParams = {
-  promptText?: string,
+  promptText?: string | undefined,
 };
 export type DialogAcceptOptions = {
   promptText?: string,
@@ -2734,39 +2734,39 @@ export interface ElectronChannel extends Channel {
 }
 export type ElectronLaunchParams = {
   sdkLanguage: string,
-  executablePath?: string,
-  args?: string[],
-  cwd?: string,
+  executablePath?: string | undefined,
+  args?: string[] | undefined,
+  cwd?: string | undefined,
   env?: NameValue[],
-  timeout?: number,
-  acceptDownloads?: boolean,
-  bypassCSP?: boolean,
-  colorScheme?: 'dark' | 'light' | 'no-preference',
-  extraHTTPHeaders?: NameValue[],
+  timeout?: number | undefined,
+  acceptDownloads?: boolean | undefined,
+  bypassCSP?: boolean | undefined,
+  colorScheme?: 'dark' | 'light' | 'no-preference' | undefined,
+  extraHTTPHeaders?: NameValue[] | undefined,
   geolocation?: {
-    longitude: number,
-    latitude: number,
-    accuracy?: number,
-  },
+      longitude: number;
+      latitude: number;
+      accuracy?: number;
+  } | undefined,
   httpCredentials?: {
-    username: string,
-    password: string,
-  },
-  ignoreHTTPSErrors?: boolean,
-  locale?: string,
-  offline?: boolean,
+      username: string;
+      password: string;
+  } | undefined,
+  ignoreHTTPSErrors?: boolean | undefined,
+  locale?: string | undefined,
+  offline?: boolean | undefined,
   recordHar?: {
-    omitContent?: boolean,
-    path: string,
-  },
+      omitContent?: boolean;
+      path: string;
+  } | undefined,
   recordVideo?: {
-    dir: string,
-    size?: {
-      width: number,
-      height: number,
-    },
-  },
-  timezoneId?: string,
+      dir: string;
+      size?: {
+          width: number;
+          height: number;
+      };
+  } | undefined,
+  timezoneId?: string | undefined,
 };
 export type ElectronLaunchOptions = {
   executablePath?: string,
@@ -3096,48 +3096,48 @@ export type AndroidDeviceInputDragResult = void;
 export type AndroidDeviceLaunchBrowserParams = {
   sdkLanguage: string,
   pkg?: string,
-  ignoreHTTPSErrors?: boolean,
-  javaScriptEnabled?: boolean,
-  bypassCSP?: boolean,
-  userAgent?: string,
-  locale?: string,
-  timezoneId?: string,
+  ignoreHTTPSErrors?: boolean | undefined,
+  javaScriptEnabled?: boolean | undefined,
+  bypassCSP?: boolean | undefined,
+  userAgent?: string | undefined,
+  locale?: string | undefined,
+  timezoneId?: string | undefined,
   geolocation?: {
-    longitude: number,
-    latitude: number,
-    accuracy?: number,
-  },
-  permissions?: string[],
-  extraHTTPHeaders?: NameValue[],
-  offline?: boolean,
+      longitude: number;
+      latitude: number;
+      accuracy?: number;
+  } | undefined,
+  permissions?: string[] | undefined,
+  extraHTTPHeaders?: NameValue[] | undefined,
+  offline?: boolean | undefined,
   httpCredentials?: {
-    username: string,
-    password: string,
-  },
-  deviceScaleFactor?: number,
-  isMobile?: boolean,
-  hasTouch?: boolean,
-  colorScheme?: 'dark' | 'light' | 'no-preference',
-  reducedMotion?: 'reduce' | 'no-preference',
-  acceptDownloads?: boolean,
-  _debugName?: string,
+      username: string;
+      password: string;
+  } | undefined,
+  deviceScaleFactor?: number | undefined,
+  isMobile?: boolean | undefined,
+  hasTouch?: boolean | undefined,
+  colorScheme?: 'dark' | 'light' | 'no-preference' | undefined,
+  reducedMotion?: 'reduce' | 'no-preference' | undefined,
+  acceptDownloads?: boolean | undefined,
+  _debugName?: string | undefined,
   recordVideo?: {
-    dir: string,
-    size?: {
-      width: number,
-      height: number,
-    },
-  },
+      dir: string;
+      size?: {
+          width: number;
+          height: number;
+      };
+  } | undefined,
   recordHar?: {
-    omitContent?: boolean,
-    path: string,
-  },
+      omitContent?: boolean;
+      path: string;
+  } | undefined,
   proxy?: {
-    server: string,
-    bypass?: string,
-    username?: string,
-    password?: string,
-  },
+      server: string;
+      bypass?: string;
+      username?: string;
+      password?: string;
+  } | undefined,
 };
 export type AndroidDeviceLaunchBrowserOptions = {
   pkg?: string,
@@ -3207,7 +3207,7 @@ export type AndroidDeviceShellResult = {
 };
 export type AndroidDeviceInstallApkParams = {
   file: Binary,
-  args?: string[],
+  args?: string[] | undefined,
 };
 export type AndroidDeviceInstallApkOptions = {
   args?: string[],
@@ -3216,7 +3216,7 @@ export type AndroidDeviceInstallApkResult = void;
 export type AndroidDevicePushParams = {
   file: Binary,
   path: string,
-  mode?: number,
+  mode?: number | undefined,
 };
 export type AndroidDevicePushOptions = {
   mode?: number,

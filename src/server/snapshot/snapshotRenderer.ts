@@ -81,7 +81,7 @@ export class SnapshotRenderer {
       <script>${snapshotScript()}</script>
     `;
 
-    const resources: { [key: string]: { resourceId: string, sha1?: string } } = {};
+    const resources: { [key: string]: { resourceId: string, sha1?: string | undefined } } = {};
     for (const [url, contextResources] of this._contextResources) {
       const contextResource = contextResources.find(r => r.frameId === snapshot.frameId) || contextResources[0];
       if (contextResource)

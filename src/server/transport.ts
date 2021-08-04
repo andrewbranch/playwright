@@ -40,8 +40,8 @@ export type ProtocolResponse = {
 export interface ConnectionTransport {
   send(s: ProtocolRequest): void;
   close(): void;  // Note: calling close is expected to issue onclose at some point.
-  onmessage?: (message: ProtocolResponse) => void,
-  onclose?: () => void,
+  onmessage?: ((message: ProtocolResponse) => void) | undefined,
+  onclose?: (() => void) | undefined,
 }
 
 export class WebSocketTransport implements ConnectionTransport {

@@ -58,7 +58,7 @@ export type StepEndPayload = {
   testId: string;
   stepId: string;
   wallTime: number;  // milliseconds since unix epoch
-  error?: TestError;
+  error?: TestError | undefined;
 };
 
 export type TestEntry = {
@@ -72,12 +72,12 @@ export type RunPayload = {
 };
 
 export type DonePayload = {
-  failedTestId?: string;
-  fatalError?: TestError;
+  failedTestId?: string | undefined;
+  fatalError?: TestError | undefined;
 };
 
 export type TestOutputPayload = {
-  testId?: string;
-  text?: string;
-  buffer?: string;
+  testId?: string | undefined;
+  text?: string | undefined;
+  buffer?: string | undefined;
 };
